@@ -1,0 +1,15 @@
+plugins {
+    id 'java-library' // Use the java-library plugin
+}
+
+repositories {
+    mavenCentral()
+}
+ext {
+    springBootVersion = '3.0.4'
+}
+
+dependencies {
+    implementation platform("org.springframework.boot:spring-bootdependencies:${springBootVersion}")
+
+}
