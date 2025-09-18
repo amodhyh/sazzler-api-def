@@ -9,5 +9,6 @@ String email,
 String firstName,
 String lastName,
 LocalDate dob,
-LocalDate createdAt)
+String role
+)
 {}
