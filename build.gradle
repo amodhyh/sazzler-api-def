@@ -11,5 +11,6 @@ ext {
 
 dependencies {
     implementation platform("org.springframework.boot:spring-bootdependencies:${springBootVersion}")
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
 
 }
