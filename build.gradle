@@ -1,16 +1,21 @@
 plugins {
-    id 'java-library' // Use the java-library plugin
+    id 'java-library'
+}
+
+group = 'com.sazzler.ecommerce'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
 }
 
 repositories {
     mavenCentral()
 }
-ext {
-    springBootVersion = '3.0.4'
-}
 
 dependencies {
-    implementation platform("org.springframework.boot:spring-bootdependencies:${springBootVersion}")
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
-
+    // expose API classes to other modules; add deps here if needed
 }
+
