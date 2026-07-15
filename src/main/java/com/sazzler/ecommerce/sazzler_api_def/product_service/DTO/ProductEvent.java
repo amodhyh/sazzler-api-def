@@ -1,28 +1,26 @@
 package com.sazzler.ecommerce.sazzler_api_def.product_service.DTO;
 
-
 import java.util.Objects;
 
-public record ProductEvent (
+public record ProductEvent(
         String productId,
-        String status,
-         Double price) {
+        String name,
+        Double price,
+        ProductEventType eventType
+) {
 
-    // This is the compact constructor
+    // Compact constructor for validation
     public ProductEvent {
-        // Basic Null Check (Using standard java.util.Objects)
         Objects.requireNonNull(productId, "productId must not be null");
-        Objects.requireNonNull(status, "status must not be null");
+        Objects.requireNonNull(eventType, "eventType must not be null");
         Objects.requireNonNull(price, "price must not be null");
-
 
         if (productId.isBlank()) {
             throw new IllegalArgumentException("productId cannot be empty or blank");
         }
 
         if (price < 0) {
-            throw new IllegalArgumentException("Price cannot be negative");
+            throw new IllegalArgumentException("price cannot be negative");
         }
     }
 }
-
