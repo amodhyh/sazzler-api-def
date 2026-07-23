@@ -9,7 +9,7 @@ import java.math.BigDecimal;
  * the product is later updated or deleted.
  */
 public record OrderItemDTO(
-        String productId,
+        Integer productId,
         String productName,
         int quantity,
         BigDecimal unitPrice
