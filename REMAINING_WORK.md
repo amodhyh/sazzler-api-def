@@ -1,10 +1,10 @@
 # api-definition — Remaining Work
 
-**Overall Status: Auth and Product DTOs are complete. The Order service contracts are nearly empty and need to be expanded before the Order Service can be built.**
+**Overall Status: Auth, Product, and Order DTOs are complete. The api-definition shared contracts are now fully expanded.**
 
 ---
 
-## 1. OrderDTO — Too Minimal, Needs Full Redesign
+## 1. ~~OrderDTO — Too Minimal, Needs Full Redesign~~ (RESOLVED)
 
 Current definition:
 ```java
@@ -28,7 +28,7 @@ public record OrderDTO(
 
 ---
 
-## 2. OrderItemDTO — Does Not Exist
+## 2. ~~OrderItemDTO — Does Not Exist~~ (RESOLVED)
 
 Orders contain line items. There is no DTO for individual items.
 
@@ -44,7 +44,7 @@ public record OrderItemDTO(
 
 ---
 
-## 3. OrderRequest — Does Not Exist
+## 3. ~~OrderRequest — Does Not Exist~~ (RESOLVED)
 
 The Order Service needs a DTO for the incoming create-order request body.
 
@@ -63,7 +63,7 @@ public record OrderItemRequest(
 
 ---
 
-## 4. OrderResponse — Does Not Exist
+## 4. ~~OrderResponse — Does Not Exist~~ (RESOLVED)
 
 A clean response DTO for order creation/retrieval that omits internal fields.
 
@@ -79,7 +79,7 @@ public record OrderResponse(
 
 ---
 
-## 5. OrderStatus Enum — Does Not Exist
+## 5. ~~OrderStatus Enum — Does Not Exist~~ (RESOLVED)
 
 **What to create (`order_service/DTO/OrderStatus.java`):**
 ```java
@@ -94,7 +94,7 @@ public enum OrderStatus {
 
 ---
 
-## 6. Order-Related Exceptions — None Exist
+## 6. ~~Order-Related Exceptions — None Exist~~ (RESOLVED)
 
 The auth and product packages both have custom exception classes. The order package has none.
 
