@@ -1,11 +1,12 @@
 package com.sazzler.ecommerce.sazzler_api_def.product_service.DTO;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 public record ProductEvent(
-        Integer productId,
+        String productId,
         String name,
-        Double price,
+        BigDecimal price,
         ProductEventType eventType
 ) {
 
@@ -15,11 +16,11 @@ public record ProductEvent(
         Objects.requireNonNull(eventType, "eventType must not be null");
         Objects.requireNonNull(price, "price must not be null");
 
-        if (productId.intValue() == 0) {
+        if (productId.isBlank() || productId.isEmpty()) {
             throw new IllegalArgumentException("productId cannot be empty or blank");
         }
 
-        if (price < 0) {
+        if (price.intValue() < 0) {
             throw new IllegalArgumentException("price cannot be negative");
         }
     }

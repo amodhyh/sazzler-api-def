@@ -5,6 +5,6 @@ package com.sazzler.ecommerce.sazzler_api_def.order_service.DTO;
  * The client specifies the product ID and desired quantity only.
  */
 public record OrderItemRequest(
-        Integer productId,
+        String productId,
         int quantity
 ) {}
